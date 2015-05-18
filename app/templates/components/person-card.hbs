@@ -1,0 +1,43 @@
+<div class="card-wrapper" data-person-id="{{person.memberID}}">
+  <div class="entityblock profile">
+    {{#link-to "profile" person.memberID class="image"}}
+      <img width="178" height="178"
+        src="{{if person.url_card_picture_scaled
+          person.url_card_picture_scaled
+          "https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_180x180_v1.png"
+        }}" alt="{{person.fullName}}" data-person-image="{{person.memberID}}">
+    {{/link-to}}
+    <div class="content">
+      <div class="profile-info">
+        <div class="name-wrapper">
+          <h4 class="name">
+            {{#link-to "profile" person.memberID class="title" title=person.fullName}}
+              {{person.fullName}} <span class="a11y-headline">{{person.headline}}</span>
+            {{/link-to}}
+          </h4>
+        </div>
+        <p class="headline">
+          <span title="{{person.headline}}">{{person.headline}}</span>
+        </p>
+      </div>
+      <div class="email-confirm">
+        <p class="extra prompt">{{person.i18n_email_prompt}}</p>
+        <label class="screen-reader-text" for="email-confirm-{{person.memberID}}">{{person.i18n_enter_email_label}}</label>
+        <input type="text" class="email-input" data-firstname="{{person.firstName}}" data-lastname="{{person.lastName}}" id="email-confirm-{{person.memberID}}">
+        <button class="email-tooltip" data-tooltip="{{person.i18n_enter_email_tooltip}}">
+        </button>
+      </div>
+
+      {{#if person.numSharedConnections}}
+        <button class="bt-incommon" data-act="incommon" data-name="{{person.fullName}}" title="{{person.i18n_incommon_title_msg}}" data-shared-connection-url="{{person.linkAuto_contacts_pymk_shared_conns_2}}" data-see-all-url="{{person.sharedConnectionsURL}}">
+          <span aria-hidden="true" class="glyph"></span><span class="glyph-text">{{person.numSharedConnections}}</span>
+          <span class="screen-reader-text">{{person.i18n_incommon_title_msg}}</span>
+        </button>
+      {{/if}}
+    </div>
+  </div>
+  <button class="bt-request-buffed buffed-blue-bkg-1" data-act="request" title="{{person.i18n_card_connect}}">{{person.i18n_card_connect_again}}</button>
+  <button class="bt-close" data-act="close" title="{{person.i18n_card_bt_close}}">{{person.i18n_card_bt_close}}</button>
+</div>
+<div class="card-metadata" data-id="{{person.memberID}}" data-token="VOGp" data-type="name" data-receiver="<a href=&quot;{{person.profileURL}}&quot;>{{person.fullName}}</a>">
+</div>
