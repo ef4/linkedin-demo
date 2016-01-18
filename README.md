@@ -1,6 +1,6 @@
 # Linkedin-demo
 
-This is a demo I presented at LinkedIn on Apr 30, 2015. It recreates
+This is a demo I [presented at LinkedIn on Apr 30, 2015](https://www.youtube.com/watch?v=vq_BcIFM8Rc). It recreates
 part of the linkedin.com application in order to demonstrate some
 animation techinques.
 
